@@ -1,0 +1,22 @@
+[
+  {
+    "shape": "Square",
+    "area": 49,
+    "Date": "Mon, 10 May 2021 22:01:20 GMT"
+  },
+  {
+    "shape": "Rectangle",
+    "area": 70,
+    "Date": "Mon, 10 May 2021 22:01:20 GMT"
+  },
+  {
+    "shape": "Circle",
+    "area": 153.94,
+    "Date": "Mon, 10 May 2021 22:01:20 GMT"
+  },
+  {
+    "shape": "Triangle",
+    "area": 6,
+    "Date": "Mon, 10 May 2021 22:01:20 GMT"
+  }
+]
