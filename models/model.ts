@@ -38,19 +38,26 @@ const  getAllData =() : Promise<string> =>{
 const calculateAreaOfCircle =(details: { shape: string; dimension:number }) : Promise<string> =>{
     return new Promise((resolve, reject) =>{
 
+        const {shape, dimension} = details
+
+        if(typeof (dimension) !== "number" || dimension < 0){
+            reject(({message: "Invalid number imput, kindly enter a valid positive integer value"}))
+        }
+        else{
             const date:string = new Date().toUTCString()
-                const {shape, dimension} = details
-                const area = Math.PI * dimension *  dimension;
+            const area = Math.PI * dimension *  dimension;
 
-                const newEntry = {
-                    shape: shape,
-                    area: Number(area.toFixed(2)),
-                    Date: date
-                }
+            const newEntry = {
+                shape: shape,
+                area: Number(area.toFixed(2)),
+                Date: date
+            }
 
-                database.push(newEntry)
-                writeDataToFile(dbFilePath, database);
-                resolve(JSON.stringify(newEntry))    
+            database.push(newEntry)
+            writeDataToFile(dbFilePath, database);
+            resolve(JSON.stringify(newEntry))    
+        }
+                
           
     })
 }
@@ -64,19 +71,25 @@ const calculateAreaOfCircle =(details: { shape: string; dimension:number }) : Pr
 
     return new Promise((resolve, reject) =>{
 
-            const {shape, dimension} = details
-                const area = dimension.a *  dimension.b;
-                const date:string = new Date().toUTCString()
+        const {shape, dimension} = details
 
-                const newEntry = {
-                    shape: shape,
-                    area: area,
-                    Date: date
-                }
+        if(typeof (dimension.a) !== "number" || dimension.a < 0 || typeof (dimension.b) !== "number" || dimension.b < 0 ){
+            reject(({message: "Invalid number imput, kindly enter a valid positive integer value"}))
+        }
+        else{
+            const area = dimension.a * dimension.b;
+            const date:string = new Date().toUTCString()
 
-                database.push(newEntry)
-                writeDataToFile(dbFilePath, database);
-                resolve(JSON.stringify(newEntry))     
+            const newEntry = {
+                shape: shape,
+                area: area,
+                Date: date
+            }
+
+            database.push(newEntry)
+            writeDataToFile(dbFilePath, database);
+            resolve(JSON.stringify(newEntry))     
+        }
     })
 }
 
@@ -90,6 +103,12 @@ const calculateAreaOfCircle =(details: { shape: string; dimension:number }) : Pr
     return new Promise((resolve, reject) =>{
 
         const {shape, dimension} = details
+
+        if(typeof (dimension) !== "number" || dimension < 0){
+            reject(({message: "Invalid number imput, kindly enter a valid positive integer value"}))
+        }
+        else{
+
         const area = dimension *  dimension;
         const date:string = new Date().toUTCString()
 
@@ -101,7 +120,8 @@ const calculateAreaOfCircle =(details: { shape: string; dimension:number }) : Pr
 
         database.push(newEntry)
         writeDataToFile(dbFilePath, database);
-        resolve(JSON.stringify(newEntry))       
+        resolve(JSON.stringify(newEntry)) 
+    }      
     })
 }
 
@@ -117,6 +137,10 @@ const calculateAreaOfCircle =(details: { shape: string; dimension:number }) : Pr
         const {shape, dimension} = details
         const {a , b, c} = dimension;
 
+        if(typeof (a) !== "number" || a < 0 || typeof (b) !== "number" || b < 0 || typeof (c) !== "number" || c < 0 ){
+            reject(({message: "Invalid number imput, kindly enter a valid positive integer value"}))
+        }
+        else{
         const semiPerimeter = (a + b + c)/2
         const area = Math.sqrt((semiPerimeter * (semiPerimeter - a) *  (semiPerimeter - b) * (semiPerimeter - c)));
         const date:string = new Date().toUTCString()
@@ -130,6 +154,7 @@ const calculateAreaOfCircle =(details: { shape: string; dimension:number }) : Pr
         database.push(newEntry)
         writeDataToFile(dbFilePath, database);
         resolve(JSON.stringify(newEntry))           
+    }
     })
 }
 

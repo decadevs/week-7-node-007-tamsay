@@ -40,17 +40,22 @@ exports.getAllData = getAllData;
  */
 const calculateAreaOfCircle = (details) => {
     return new Promise((resolve, reject) => {
-        const date = new Date().toUTCString();
         const { shape, dimension } = details;
-        const area = Math.PI * dimension * dimension;
-        const newEntry = {
-            shape: shape,
-            area: Number(area.toFixed(2)),
-            Date: date
-        };
-        database.push(newEntry);
-        writeDataToFile(dbFilePath, database);
-        resolve(JSON.stringify(newEntry));
+        if (typeof (dimension) !== "number" || dimension < 0) {
+            reject(({ message: "Invalid number imput, kindly enter a valid positive integer value" }));
+        }
+        else {
+            const date = new Date().toUTCString();
+            const area = Math.PI * dimension * dimension;
+            const newEntry = {
+                shape: shape,
+                area: Number(area.toFixed(2)),
+                Date: date
+            };
+            database.push(newEntry);
+            writeDataToFile(dbFilePath, database);
+            resolve(JSON.stringify(newEntry));
+        }
     });
 };
 exports.calculateAreaOfCircle = calculateAreaOfCircle;
@@ -62,16 +67,21 @@ exports.calculateAreaOfCircle = calculateAreaOfCircle;
 const calculateAreaOfRectangle = (details) => {
     return new Promise((resolve, reject) => {
         const { shape, dimension } = details;
-        const area = dimension.a * dimension.b;
-        const date = new Date().toUTCString();
-        const newEntry = {
-            shape: shape,
-            area: area,
-            Date: date
-        };
-        database.push(newEntry);
-        writeDataToFile(dbFilePath, database);
-        resolve(JSON.stringify(newEntry));
+        if (typeof (dimension.a) !== "number" || dimension.a < 0 || typeof (dimension.b) !== "number" || dimension.b < 0) {
+            reject(({ message: "Invalid number imput, kindly enter a valid positive integer value" }));
+        }
+        else {
+            const area = dimension.a * dimension.b;
+            const date = new Date().toUTCString();
+            const newEntry = {
+                shape: shape,
+                area: area,
+                Date: date
+            };
+            database.push(newEntry);
+            writeDataToFile(dbFilePath, database);
+            resolve(JSON.stringify(newEntry));
+        }
     });
 };
 exports.calculateAreaOfRectangle = calculateAreaOfRectangle;
@@ -83,16 +93,21 @@ exports.calculateAreaOfRectangle = calculateAreaOfRectangle;
 const calculateAreaOfSquare = (details) => {
     return new Promise((resolve, reject) => {
         const { shape, dimension } = details;
-        const area = dimension * dimension;
-        const date = new Date().toUTCString();
-        const newEntry = {
-            shape: shape,
-            area: area,
-            Date: date
-        };
-        database.push(newEntry);
-        writeDataToFile(dbFilePath, database);
-        resolve(JSON.stringify(newEntry));
+        if (typeof (dimension) !== "number" || dimension < 0) {
+            reject(({ message: "Invalid number imput, kindly enter a valid positive integer value" }));
+        }
+        else {
+            const area = dimension * dimension;
+            const date = new Date().toUTCString();
+            const newEntry = {
+                shape: shape,
+                area: area,
+                Date: date
+            };
+            database.push(newEntry);
+            writeDataToFile(dbFilePath, database);
+            resolve(JSON.stringify(newEntry));
+        }
     });
 };
 exports.calculateAreaOfSquare = calculateAreaOfSquare;
@@ -105,17 +120,22 @@ const calculateAreaOfTriangle = (details) => {
     return new Promise((resolve, reject) => {
         const { shape, dimension } = details;
         const { a, b, c } = dimension;
-        const semiPerimeter = (a + b + c) / 2;
-        const area = Math.sqrt((semiPerimeter * (semiPerimeter - a) * (semiPerimeter - b) * (semiPerimeter - c)));
-        const date = new Date().toUTCString();
-        const newEntry = {
-            shape: shape,
-            area: Number(area.toFixed(2)),
-            Date: date
-        };
-        database.push(newEntry);
-        writeDataToFile(dbFilePath, database);
-        resolve(JSON.stringify(newEntry));
+        if (typeof (a) !== "number" || a < 0 || typeof (b) !== "number" || b < 0 || typeof (c) !== "number" || c < 0) {
+            reject(({ message: "Invalid number imput, kindly enter a valid positive integer value" }));
+        }
+        else {
+            const semiPerimeter = (a + b + c) / 2;
+            const area = Math.sqrt((semiPerimeter * (semiPerimeter - a) * (semiPerimeter - b) * (semiPerimeter - c)));
+            const date = new Date().toUTCString();
+            const newEntry = {
+                shape: shape,
+                area: Number(area.toFixed(2)),
+                Date: date
+            };
+            database.push(newEntry);
+            writeDataToFile(dbFilePath, database);
+            resolve(JSON.stringify(newEntry));
+        }
     });
 };
 exports.calculateAreaOfTriangle = calculateAreaOfTriangle;
