@@ -2,11 +2,11 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import createError from "http-errors";
 import express, {Application, Response, Request, NextFunction} from 'express';
-import { getAllDatabaseEntry} from './controllers/controller';
 import * as dotenv from "dotenv";
 dotenv.config();
 import fetchRecords from './routes/fetchRecords'
 import calculate from './routes/calculate'
+import indexRoute from './routes/index'
 
 
 const port = process.env.PORT || 6000;
@@ -23,6 +23,7 @@ app.use(cookieParser());
 // app.get('/fetchRecords', (req : Request, res : Response, next: NextFunction)=>{
 //     getAllDatabaseEntry(req, res) 
 // })
+app.use("/" , indexRoute), 
 app.use('/fetchRecords', fetchRecords)
 // // function call to get a specific entry in the database
 // app.get('/:id', (req : Request, res : Response, next: NextFunction)=>{

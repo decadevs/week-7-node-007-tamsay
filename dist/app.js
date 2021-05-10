@@ -30,6 +30,7 @@ const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 const fetchRecords_1 = __importDefault(require("./routes/fetchRecords"));
 const calculate_1 = __importDefault(require("./routes/calculate"));
+const index_1 = __importDefault(require("./routes/index"));
 const port = process.env.PORT || 6000;
 const app = express_1.default();
 app.use(morgan_1.default('dev'));
@@ -41,7 +42,8 @@ app.use(cookie_parser_1.default());
 // app.get('/fetchRecords', (req : Request, res : Response, next: NextFunction)=>{
 //     getAllDatabaseEntry(req, res) 
 // })
-app.use('/fetchRecords', fetchRecords_1.default);
+app.use("/", index_1.default),
+    app.use('/fetchRecords', fetchRecords_1.default);
 // // function call to get a specific entry in the database
 // app.get('/:id', (req : Request, res : Response, next: NextFunction)=>{
 //     const id = req.params.id;
