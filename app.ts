@@ -17,41 +17,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 
-
-// READ
-// function call to get all entries in the database
-// app.get('/fetchRecords', (req : Request, res : Response, next: NextFunction)=>{
-//     getAllDatabaseEntry(req, res) 
-// })
 app.use("/" , indexRoute), 
 app.use('/fetchRecords', fetchRecords)
-// // function call to get a specific entry in the database
-// app.get('/:id', (req : Request, res : Response, next: NextFunction)=>{
-//     const id = req.params.id;
-//     getSingleDatabaseEntry(req, res, id) 
-// })
-
-// CREATE
-// function call to create a new profile entry in the database
-// app.post('/calculate', (req : Request, res : Response, next: NextFunction)=>{
-//     createEntry(req, res) 
-// })
 app.use('/calculate', calculate)
-
-// // UPDATE
-// // function call to delete a profile/user from the database
-// app.put('/:id', (req : Request, res : Response, next: NextFunction)=>{
-//     const id = req.params.id;
-//     updateEntry(req, res, id) 
-// })
-
-// // DELETE
-// // function call to delete a profile/user from the database
-// app.delete('/:id', (req : Request, res : Response, next: NextFunction)=>{
-//     const id = req.params.id;
-//     deleteEntry(req, res, id) 
-// })
-
 
 // catch 404 and forward to error handler
 app.use(function(req : Request, res : Response, next: NextFunction) {
