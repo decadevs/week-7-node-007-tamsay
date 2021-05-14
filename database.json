@@ -78,5 +78,10 @@
     "shape": "Circle",
     "area": 35,
     "Date": "Mon, 10 May 2021 23:06:36 GMT"
+  },
+  {
+    "shape": "Triangle",
+    "area": 4.15,
+    "Date": "Fri, 14 May 2021 21:26:37 GMT"
   }
 ]

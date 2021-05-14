@@ -123,6 +123,9 @@ const calculateAreaOfTriangle = (details) => {
         if (typeof (a) !== "number" || a < 0 || typeof (b) !== "number" || b < 0 || typeof (c) !== "number" || c < 0) {
             reject(({ message: "Invalid number imput, kindly enter a valid positive integer value" }));
         }
+        else if (a + b <= c || a + c <= b || b + c <= a) {
+            reject(({ message: "Invalid dimensions, the sum of two sides of a triangle must be greater than the third side" }));
+        }
         else {
             const semiPerimeter = (a + b + c) / 2;
             const area = Math.sqrt((semiPerimeter * (semiPerimeter - a) * (semiPerimeter - b) * (semiPerimeter - c)));
