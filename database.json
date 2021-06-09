@@ -83,5 +83,25 @@
     "shape": "Triangle",
     "area": 4.15,
     "Date": "Fri, 14 May 2021 21:26:37 GMT"
+  },
+  {
+    "shape": "Square",
+    "area": 49,
+    "Date": "Wed, 09 Jun 2021 23:26:59 GMT"
+  },
+  {
+    "shape": "Rectangle",
+    "area": 70,
+    "Date": "Wed, 09 Jun 2021 23:26:59 GMT"
+  },
+  {
+    "shape": "Circle",
+    "area": 153.94,
+    "Date": "Wed, 09 Jun 2021 23:27:00 GMT"
+  },
+  {
+    "shape": "Triangle",
+    "area": 6,
+    "Date": "Wed, 09 Jun 2021 23:27:00 GMT"
   }
 ]

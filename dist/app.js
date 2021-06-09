@@ -37,36 +37,9 @@ app.use(morgan_1.default('dev'));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use(cookie_parser_1.default());
-// READ
-// function call to get all entries in the database
-// app.get('/fetchRecords', (req : Request, res : Response, next: NextFunction)=>{
-//     getAllDatabaseEntry(req, res) 
-// })
 app.use("/", index_1.default),
     app.use('/fetchRecords', fetchRecords_1.default);
-// // function call to get a specific entry in the database
-// app.get('/:id', (req : Request, res : Response, next: NextFunction)=>{
-//     const id = req.params.id;
-//     getSingleDatabaseEntry(req, res, id) 
-// })
-// CREATE
-// function call to create a new profile entry in the database
-// app.post('/calculate', (req : Request, res : Response, next: NextFunction)=>{
-//     createEntry(req, res) 
-// })
 app.use('/calculate', calculate_1.default);
-// // UPDATE
-// // function call to delete a profile/user from the database
-// app.put('/:id', (req : Request, res : Response, next: NextFunction)=>{
-//     const id = req.params.id;
-//     updateEntry(req, res, id) 
-// })
-// // DELETE
-// // function call to delete a profile/user from the database
-// app.delete('/:id', (req : Request, res : Response, next: NextFunction)=>{
-//     const id = req.params.id;
-//     deleteEntry(req, res, id) 
-// })
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     next(http_errors_1.default(404));
