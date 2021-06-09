@@ -103,5 +103,45 @@
     "shape": "Triangle",
     "area": 6,
     "Date": "Wed, 09 Jun 2021 23:27:00 GMT"
+  },
+  {
+    "shape": "Square",
+    "area": 49,
+    "Date": "Wed, 09 Jun 2021 23:33:03 GMT"
+  },
+  {
+    "shape": "Rectangle",
+    "area": 70,
+    "Date": "Wed, 09 Jun 2021 23:33:03 GMT"
+  },
+  {
+    "shape": "Circle",
+    "area": 153.94,
+    "Date": "Wed, 09 Jun 2021 23:33:03 GMT"
+  },
+  {
+    "shape": "Triangle",
+    "area": 6,
+    "Date": "Wed, 09 Jun 2021 23:33:03 GMT"
+  },
+  {
+    "shape": "Square",
+    "area": 49,
+    "Date": "Wed, 09 Jun 2021 23:35:27 GMT"
+  },
+  {
+    "shape": "Rectangle",
+    "area": 70,
+    "Date": "Wed, 09 Jun 2021 23:35:28 GMT"
+  },
+  {
+    "shape": "Circle",
+    "area": 153.94,
+    "Date": "Wed, 09 Jun 2021 23:35:28 GMT"
+  },
+  {
+    "shape": "Triangle",
+    "area": 6,
+    "Date": "Wed, 09 Jun 2021 23:35:28 GMT"
   }
 ]

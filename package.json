@@ -7,7 +7,7 @@
     "start": "nodemon dist/app.js",
     "dev": "nodemon app.ts",
     "build": "tsc -p .",
-    "test": "jest --detectOpenHandles",
+    "test": "jest --detectOpenHandles --forceExit",
     "test:watch": "jest --watch --detectOpenHandles"
   },
   "dependencies": {
