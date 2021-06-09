@@ -3,8 +3,6 @@ const supertest = require("supertest");
 const request = supertest(app);
 
 describe("Area Calculations", () => {
-  jest.setTimeout(30000);
-
   it("tests the GET endpoint for All area calculations", async (done) => {
     const response = await request.get("/fetchRecords");
     const statusCode = response.statusCode;
@@ -63,8 +61,4 @@ describe("Area Calculations", () => {
     expect(response.body.area).toEqual(6);
     done();
   });
-});
-
-afterAll(async () => {
-  await new Promise((resolve) => setTimeout(() => resolve(), 10000)); // avoid jest open handle error
 });
