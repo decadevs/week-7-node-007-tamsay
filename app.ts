@@ -37,8 +37,10 @@ res.status(err.status || 500);
 res.send('Page Not Found');
 });
 
-app.listen(port, ()=>{
-    console.log(`server started at port ${port}`)
-})
+if (process.env.NODE_ENV !== 'test') {
+    app.listen(port, ()=>{
+        console.log(`server started at port ${port}`)
+    })
+  }
 
 module.exports = app;
